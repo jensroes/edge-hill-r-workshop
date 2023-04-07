@@ -7,16 +7,16 @@ blomkvist <- read_csv("data/blomkvist.csv")
 # There are 4 more (optional) grammatical elements.
 
 # Create a scatter plot with medicine (x-axis) and rt of dominant hand (y-axis.)
-pal_plot <- ggplot(data = blomkvist,
+meds_plot <- ggplot(data = blomkvist,
                    mapping = aes(x = ---, y = ---)) +
   geom_jitter() # similar to geom_point() but adds some jitter to avoid overplotting
 
-# Check out the pal plot
-pal_plot
+# Check out the meds plot
+meds_plot
 
 # 1. Facets: in facet_grid, replace "---" with smoker to create one panel
 # per smoker level:
-pal_plot + facet_grid( ~ ---)
+meds_plot + facet_grid( ~ ---)
 
 # 2. Statistics: run the code below, then add + stat_smooth(method = "lm")
 # and run again

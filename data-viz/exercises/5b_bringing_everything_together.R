@@ -1,7 +1,7 @@
 # Load tidyverse package
 library(tidyverse)
 library(ggthemes)
-# If not installed, install ggthemes
+# If not installed, install ggthemes and run the library command again.
 #install.packages("ggthemes")
 
 # Load the blomkvist data and store them in the variable `blomkvist`
@@ -34,12 +34,12 @@ ggplot(blomkvist_long, aes(y = rt,
   scale_y_log10()
 
 # There are a couple of data viz related things that needs cleaning up:
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 1. Dots are too large.
 # 2. We want red dots behind red boxplots and blue dots behind blue boxplots
 # 3. Boxplots add dots for outliers that are shown as jittered dots anyway.
-# These need to be removed (i.e. either the jitter or the outliers).
+# The boxplot outliers need to be removed.
+# Here is how:
 # Use the code below.
 # `position_jitterdodge` allows us to control the width of the jitter and
 # how far apart the dots are dodged, so they appear behind the boxplot.
@@ -61,7 +61,6 @@ rt_plot
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # We definitely need to change the text.
-# Not that we already change the labels for `smoker` and `dominant` above in anticipation.
 # Correctly insert, `y`, `x`, `colour`
 rt_plot <- rt_plot +
   labs(--- = "Reaction time in msecs",
@@ -74,14 +73,15 @@ rt_plot
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Changing the colour scheme.
 # You can define colours yourself but often it is easier to use functions that provide
-# colour schemes. Here are some example.
-# I like the first one because it is designed for colourblind people
+# colour schemes.
+# Here are some example.
+# I like the first one because it is designed for people that struggle to distinguish colours
 # and do a good job when printed on a grey scale.
 rt_plot + scale_colour_colorblind() # `ggthemes` package
 rt_plot + scale_color_wsj() # `ggthemes` package
 rt_plot + scale_colour_viridis_d()
 
-# Select your favourite and add the plot to `rt_plot`
+# Select your favorite and add the plot to `rt_plot`
 rt_plot <- rt_plot + scale_colour_---()
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,7 +94,7 @@ rt_plot + theme_light()
 
 # Type `theme_` and you will see a drop down menu with all themes available in your environment.
 
-# Choose your favourtie and add the plot to `rt_plot`
+# Choose your favorite and add the plot to `rt_plot`
 rt_plot <- rt_plot + theme_---()
 
 # Changing the overall font size.
@@ -104,21 +104,21 @@ rt_plot <- rt_plot + theme_---(base_size = ---)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Changing theme properties manually.
-# Legend position: I prefer to legend to be on the top or bottom to there is more room
-# for showing data (default is "right")
-# Removing grid in the background.
+# Legend position: I prefer the legend to be on the top or bottom so there is
+# more room for showing data when included on an A4 page.
+# Also, I tend to remove the grid in the background when it doesn't serve a function.
 rt_plot + theme(legend.position = "---", # use "top" or "bottom
                 legend.justification = "right", # default is "centre". Use "right" or "left".
                 panel.grid.minor = ---) # `element_blank()` can be use to remove properties such as minor grid lines
 
-# Add the above changes to rt_plot using assignment `<-` as above.
+# Add the above changes to rt_plot using the assignment operator `<-` as above.
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # To save the plot you can use the following line. Before name the plot "myplot.pdf"
 # Set width and height to 6.
 # This code will save the plot that is currently open in the viewer.
-ggsave("viz/---.pdf", width = ---, height = ---)
+ggsave("data-viz/---.pdf", width = ---, height = ---)
 
 # The pdf with the plot is now in the visulisation workshop folder (viz).
 # You can also use other image formats like ".png" instead of ".pdf".

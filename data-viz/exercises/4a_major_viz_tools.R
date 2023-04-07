@@ -1,7 +1,7 @@
 # Load tidyverse
 library(tidyverse)
 
-# Load the blomkvist data and store them in the variable `blomkvist`
+# Load the blomkvist data and store them in `blomkvist`
 blomkvist <- read_csv("data/blomkvist.csv")
 
 # Check out the variables in the data
@@ -50,7 +50,7 @@ rt_plot_2 + --- + ---
 # and the log scaled y axis
 rt_plot_2 + --- + --- + ---
 
-# Finally of using a dummy variable for x, we can all a categorical variable
+# Finally instead of using a dummy variable for x, we can add a categorical variable
 # such as "sex" to be represented on the x axis to allow for easy comparisons
 # between the rts of males and females
 ggplot(data = blomkvist, aes(x = ---, y = rt_hand_d)) +

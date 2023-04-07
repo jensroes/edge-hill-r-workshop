@@ -4,11 +4,16 @@ library(tidyverse)
 # Load the blomkvist data and store them in the variable `blomkvist`
 blomkvist <- read_csv("data/blomkvist.csv")
 
-# For this exercise we use the differences between rt of the dominant and non-dominant hand.
-# For following line computes a new variable.
+# Remind yourself of the variables that live in `blomkvist`.
+glimpse(blomkvist)
+
+# For this exercise we'll use the differences between rt of the dominant and non-dominant hand.
+
+# The following line computes a new variable `hand_diff` that is the difference between
+# dominant and non-dominant hand.
 blomkvist <- mutate(blomkvist, hand_diff = rt_hand_nd - rt_hand_d)
 
-# Check out the variable (the new variable is on the bottom of this output):
+# Check out the new variable on the bottom:
 glimpse(blomkvist)
 
 # Scatter plot of the differences

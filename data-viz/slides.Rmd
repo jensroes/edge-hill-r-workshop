@@ -261,7 +261,7 @@ ggplot(data = blomkvist,
   ggthemes::scale_color_colorblind() +
   labs(y = "Average reaction time of dominant\nhand (in msecs)", 
        x = "Age (in years)",
-       caption = "Data from Blomkvist et al. (2017)",
+       caption = "Data published in\nBlomkvist et al. (2017)",
        colour = "Smoker") +
   theme(legend.position = "top",
         legend.justification = "right",
@@ -282,7 +282,7 @@ ggplot(data = blomkvist,
   ggthemes::scale_color_colorblind() +
   labs(y = "Average reaction time of dominant\nhand (in msecs)", 
        x = "Age (in years)",
-       caption = "Data from Blomkvist et al. (2017)",
+       caption = "Data published in\nBlomkvist et al. (2017)",
        colour = "Smoker") +
   theme(legend.position = "top",
         legend.justification = "right",
@@ -444,14 +444,13 @@ Open script **exercises/tdd.R**
 ```{r eval = FALSE}
 ggplot(data = blomkvist, 
        mapping = aes(x = age, 
-                     y = rt_hand_d, 
-                     colour = smoker))
+                     y = rt_hand_d))
 ```
 </div>
 
 <div style="float: right; width: 60%;">
 ```{r echo = FALSE, out.width = "100%"}
-ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d)) +
     scale_y_continuous(limits = c(250, 2000))
 ```
 </div>
@@ -463,8 +462,7 @@ ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker))
 ```{r eval = FALSE}
 ggplot(data = blomkvist, 
        mapping = aes(x = age, 
-                     y = rt_hand_d, 
-                     colour = smoker)) +
+                     y = rt_hand_d)) +
   ###<b>
   geom_point()
   ###</b>
@@ -473,7 +471,7 @@ ggplot(data = blomkvist,
 
 <div style="float: right; width: 60%;">
 ```{r echo = FALSE, out.width = "100%"}
-ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d)) +
   geom_point() +
   scale_y_continuous(limits = c(250, 2000))
 ```
@@ -486,8 +484,7 @@ ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker))
 ```{r eval = FALSE}
 ggplot(data = blomkvist, 
        mapping = aes(x = age, 
-                     y = rt_hand_d, 
-                     colour = smoker)) +
+                     y = rt_hand_d)) +
   ###<b>
   geom_quantile()
   ###</b>
@@ -496,7 +493,7 @@ ggplot(data = blomkvist,
 
 <div style="float: right; width: 60%;">
 ```{r echo = FALSE, out.width = "100%"}
-ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d)) +
   geom_quantile() +
   scale_y_continuous(limits = c(250, 2000))
 
@@ -510,8 +507,7 @@ ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker))
 ```{r eval = FALSE}
 ggplot(data = blomkvist, 
        mapping = aes(x = age, 
-                     y = rt_hand_d, 
-                     colour = smoker)) +
+                     y = rt_hand_d)) +
   ###<b>
   geom_rug()
   ###</b>
@@ -520,7 +516,7 @@ ggplot(data = blomkvist,
 
 <div style="float: right; width: 60%;">
 ```{r echo = FALSE, out.width = "100%"}
-ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d)) +
   geom_rug() +
   scale_y_continuous(limits = c(250, 2000))
 
@@ -534,8 +530,7 @@ ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker))
 ```{r eval = FALSE}
 ggplot(data = blomkvist, 
        mapping = aes(x = age, 
-                     y = rt_hand_d, 
-                     colour = smoker)) +
+                     y = rt_hand_d)) +
   ###<b>
   geom_point() +
   geom_quantile() +
@@ -546,7 +541,7 @@ ggplot(data = blomkvist,
 
 <div style="float: right; width: 60%;">
 ```{r echo = FALSE, out.width = "100%"}
-ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d)) +
   geom_point() +
   geom_quantile() +
   geom_rug() +
@@ -574,12 +569,12 @@ ggplot(data = blomkvist, mapping = aes(x = age, y = rt_hand_d, colour = smoker))
 <div style="float: right; width: 60%;">
 
 ```{r echo = FALSE, out.width = "90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point()
 ```
 
 ```{r eval = FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point()
 ```
 
@@ -598,14 +593,14 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
 <div style="float: right; width: 60%;">
 
 ```{r echo = FALSE, out.width="90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   facet_grid(~sex)
 ```
 
 
 ```{r eval = FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   ###<b>
   facet_grid(~sex)
@@ -627,17 +622,17 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
 <div style="float: right; width: 60%;">
 
 ```{r echo = FALSE, out.width="90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
-  stat_smooth(method = "lm", se = FALSE, fullrange = TRUE) 
+  stat_smooth(method = "lm", se = FALSE) 
 ```
 
 
 ```{r eval = FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   ###<b>
-  stat_smooth(method = "lm", se = FALSE, fullrange = TRUE) 
+  stat_smooth(method = "lm", se = FALSE) 
   ###</b>
 ```
 </div>
@@ -657,13 +652,13 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
 <div style="float: right; width: 60%;">
 
 ```{r echo=FALSE, out.width="90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   coord_trans(x = "log", y = "reverse")
 ```
 
 ```{r eval=FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   ###<b>
   coord_trans(x = "log", y = "reverse")
@@ -687,13 +682,13 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
 <div style="float: right; width: 60%;">
 
 ```{r echo=FALSE, out.width="90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   coord_flip()
 ```
 
 ```{r eval=FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   ###<b>
   coord_flip()
@@ -718,13 +713,13 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
 <div style="float: right; width: 60%;">
 
 ```{r echo=FALSE, out.width="90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   theme_dark()
 ```
 
 ```{r eval=FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   ###<b>
   theme_dark()
@@ -749,13 +744,13 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
 <div style="float: right; width: 60%;">
 
 ```{r echo=FALSE, out.width="90%"}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   theme(panel.background = element_blank())
 ```
 
 ```{r eval=FALSE}
-ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker)) +
+ggplot(blomkvist, aes(x = age, y = rt_hand_d)) +
   geom_point() +
   ###<b>
   theme(panel.background = element_blank())
@@ -963,7 +958,7 @@ ggplot(blomkvist, aes(x = age, y = rt_hand_d, colour = smoker, shape = sex))  +
 
 
 
-## Aesthetics | typically x, y, colour, fill, size, alpha, linetype, labels
+## Aesthetics | typically `x`, `y`, `colour`, `fill`, `group`
 
 <div style="float: left; width: 40%;">
 - some are required by geometries; others are optional
@@ -1250,13 +1245,13 @@ print(geoms, quote = F)
 
 ## Major visualisation tools
 
+- choice depends on visualisation goals (and your subject domain)
 - more `geoms` in other packages such as `tidybayes`, `ggbeeswarm`, and `ggridges`
-- choice depends on visualisation goal (and your subject domain)
 - many can be combined
 - three important groups: 
   - bivariate distributions 
   - univariate distributions
-  - group comparisons
+  - groups comparison
 
 ## Bivariate distribution
 
@@ -1356,14 +1351,14 @@ ggplot(blomkvist, aes(x = rt_hand_d)) +
 </div>
 
 
-## Group comparisons
+## Groups comparison
 
 - function: distribution of values for two or more groups (often closely tied to statistical descriptions)
 - variable type: continuous 
 - examples: (jitter) dots, box plot, violin plot, beeswarm plots, barplot (pie chart), dynamite plots
 
 
-## Group comparisons | dynamite plot and its pitfalls
+## Groups comparison | dynamite plot and its pitfalls
 
 <div style="float: left; width: 40%;">
 
@@ -1390,7 +1385,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
 
 
 
-## Group comparisons | dynamite plots
+## Groups comparison | dynamite plots
 
 ```{r  out.width="65%", echo = FALSE, results=FALSE}
 ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
@@ -1401,7 +1396,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
   labs(y = "Reaction time of dominant\nhand (in msecs)", x = "Smoker") 
 ```
 
-## Group comparisons | dots
+## Groups comparison | dots
 
 ```{r  out.width="65%", echo = FALSE, results=FALSE}
 ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
@@ -1413,7 +1408,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
 
 
 
-## Group comparisons | jittered dots
+## Groups comparison | jittered dots
 
 
 
@@ -1427,7 +1422,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
 
 
 
-## Group comparisons | jittered dots and errorbars
+## Groups comparison | jittered dots and errorbars
 
 
 ```{r  out.width="65%", echo = FALSE, results=FALSE}
@@ -1446,7 +1441,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
 ```
 
 
-## Group comparisons | box-and-whiskers plot
+## Groups comparison | box-and-whiskers plot
 
 
 ```{r  out.width="65%", echo = FALSE, results=FALSE}
@@ -1455,7 +1450,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
   labs(y = "Reaction time of dominant\nhand (in msecs)", x = "Smoker")
 ```
 
-## Group comparisons | box-and-whiskers plot
+## Groups comparison | box-and-whiskers plot
 
 
 ```{r  out.width="65%", echo = FALSE, results=FALSE}
@@ -1467,7 +1462,7 @@ ggplot(data = blomkvist, aes(y = rt_hand_d, x = smoker)) +
 
 
 
-## Group comparisons | box-and-whiskers plot [@tukey1977exploratory]
+## Groups comparison | box-and-whiskers plot [@tukey1977exploratory]
 
 <div style="float: right;">
 
@@ -1748,7 +1743,7 @@ print(all_themes)
 ```
 
 
-## Themes (`ggplot` default)
+## Themes (`ggplot2` default)
 
 <div style="float: left; width: 45%;">
 

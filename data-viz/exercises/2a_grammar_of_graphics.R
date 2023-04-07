@@ -1,7 +1,7 @@
 # Load tidyverse
 library(tidyverse)
 
-# Load the blomkvist data and store them in the variable `blomkvist`
+# Load the blomkvist data and store them in `blomkvist`
 blomkvist <- read_csv("data/blomkvist.csv")
 
 # Check out the variables in the data
@@ -9,12 +9,15 @@ glimpse(blomkvist)
 
 # Lets go through the essential 3 grammatical elements and apply them to the
 # code below:
-# 1. Data: map the data blomkvist to `data = `
+# 1. Data: map the data frame `blomkvist` to the `data = ` argument below.
+
 # 2. Aesthetics: map rt of dominant hand on x and rt of non-dominant hand on y
-# Run and check what happens; you should see a blank plot
+# Run and check what happens; you should see a blank plot.
 ggplot(data = ---, mapping = aes(x = ---, y = ---))
 
-# 3. Geometries: let's now visualise the data as points; add `+ geom_point()`
+# 3. Geometries: to render the data we need to choose a geom that determines
+# how the data should be visualised.
+# Let's visualise the data as points; add `+ geom_point()`
 ggplot(data = ---, mapping = aes(x = ---, y = ---))
 
 # Lets add another aethetic. Add sex to colour (everything else as before)
@@ -34,7 +37,7 @@ ggplot(data = ---, mapping = aes(x = ---, y = ---, size = ---, alpha = ---)) +
 # Add another geometry, namely `geom_rug()`
 
 # Geometries control the visual encoding of the data.
-# For example, lets look at the frequency distribution of ages in the sample:
+# Lets look at the frequency distribution of ages in the sample:
 # First we create a plotting canvas and save it to an object called "age_plot".
 # Map age on x
 age_plot <- ggplot(data = blomkvist, mapping = aes(x = age))
@@ -44,8 +47,15 @@ age_plot
 # Not much to see at the moment.
 
 # We can now manipulate this object by adding a geometry layers,
-# for example a histogram:
-age_plot + geom_histogram()
+
+# We can render the data as density plot: add `geom_density()`
+age_plot + ---
+
+# or using a rug: add `geom_rug()`
+age_plot + ---
+
+# or we can show the data as a histogram using `geom_histogram()`
+age_plot + ---
 
 # You'll see a message like this:
 # "`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
@@ -66,6 +76,6 @@ age_plot + geom_histogram(binwidth = ---)
 
 # The binwidth argument controls the age span within each bar / bin;
 # binwidth = 1 is one year.
-# Instead one can use a density plot: add `geom_density()`
-age_plot + ---
+
+# We can also combine geom. Try to create a density plot with rug.
 

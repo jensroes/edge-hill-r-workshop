@@ -17,16 +17,19 @@ p_meds <- ggplot(data = blomkvist, aes(y = ---, x = ---))
 p_meds
 
 # Dynamite plots are frequently used to compare groups although there are
-# very good reasons to avoid these when copmaring groups.
+# good reasons to avoid these.
+
 # For practice here is how to create a dynamite plot.
 
 # stat_summary allows us to calculate summary statistics such as the mean and
 # error bars.
+
 # Check the following code. Medians are plotted as point.
-# Try instead to represent the mean as "bar":
 p_meds + stat_summary(fun = median, geom = "point", fill = "grey")
-# HINT: change median to mean and point to bar.
+
+# Try instead to represent the mean as "bar" geom:
 p_meds + stat_summary(fun = ---, geom = "---", fill = "grey")
+# HINT: change median to mean and point to bar.
 
 # Repeat the above for the first stat_summary function below.
 # The second stat_summary() should add the geom "errorbar"s.
@@ -34,11 +37,12 @@ p_meds + stat_summary(fun = ---, geom = "---", fill = "grey")
 p_meds + stat_summary(fun = ---, geom = "---", fill = "grey") +
          stat_summary(fun.data = mean_sdl, geom = "---", width = ---)
 
-# Pitfalls for dynamite plots
-# 1. we don't know how the data are distributed (plot suggest normal distribution),
+# What's the problem with dynamite plots?
+# 1. we don't know how the data are distributed (plot suggest normal),
 # 2. how many observation do we have in each group?
 # 3. bars suggest data where there are none (e.g. zero rt).
 # 4. there are values above the bar that are not shown in ink.
+# Overall, dynamite plots conceal and distort information more than they reveal.
 # Don't bother with dynamite plots :)
 # Also, the alternatives are much easier to create :)
 
@@ -46,28 +50,28 @@ p_meds + stat_summary(fun = ---, geom = "---", fill = "grey") +
 # Add them to the canvas p_meds
 --- + geom_point()
 --- + geom_jitter(width = .1)
+--- + geom_violin(draw_quantiles = c(.025,.5,.975), trim = F) # matter of taste ;)
 --- + geom_boxplot(width = .25)
 
 # For boxplots you can change the colour attribute of outliers. Try red.
 --- + geom_boxplot(width = .25, outlier.colour = "---")
 
 # You can add notches which represent 95% confidence intervals.
-# Set notch from FALSE to TRUE (FALSE is default)
---- + geom_boxplot(width = .25, notch = FALSE)
+# Set notch to TRUE (FALSE is default)
+--- + geom_boxplot(width = .25, notch = ---)
 
 # The middle line shows the median. You can add the mean though.
 # Set fun to mean, geom to point and display the means in red.
 p_meds + geom_boxplot(width = .25) +
   stat_summary(fun = ---, geom = "---", colour = "---")
 
-# As alternative you can use violin plots but they are not always helpful.
-p_meds + geom_violin(draw_quantiles = c(.025,.5,.975), trim = F) # matter of taste ;)
-
-# Add jittered data points to the boxplot below (reduce width).
-# Note: outlier.shape = NA removes "outliers" because we want to add the raw data as jittered data points anyway.
+# Add jittered data points to a boxplot.
 p_meds +
   geom_---(width = .15) + # jittered points here
   geom_---(width = .25, outlier.shape = NA, notch = TRUE) # boxplot here
+
+# Note: outlier.shape = NA removes "outliers" because we want to add the
+# raw data as jittered data points.
 
 # Consider this plot:
 p_meds +
