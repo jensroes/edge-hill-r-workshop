@@ -58,7 +58,7 @@ blomkvist_grouped <- group_by(blomkvist_long, response_by, dominant)
 
 # Summarise data
 blomkvist_summary <- summarise(blomkvist_grouped,
-                      across(rt, list(mean = mean, sd = sd),  na.rm = TRUE))
+                      across(rt, list(mean = mean, sd = sd), na.rm = TRUE))
 
 # Ungroup data
 blomkvist_summary <- ungroup(blomkvist_summary)

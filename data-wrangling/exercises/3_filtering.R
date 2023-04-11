@@ -7,6 +7,9 @@ blomkvist <- read_csv("data/blomkvist.csv")
 # Select variables: id and rename to ppt, age, and the rt of the dominant hand (rename to rt)
 blomkvist <- select(blomkvist, ppt = ---, smoker, age, rt = ---)
 
+# Make sure you know the variable names
+glimpse(blomkvist)
+
 # Filtering data: keeping data that fulfill our inclusion criteria.
 # rts larger than or equal to 1 sec
 filter(blomkvist, rt >= ---)
@@ -43,10 +46,10 @@ unique(blomkvist$---)
 filter(blomkvist, --- %in% c(---, ---))
 
 # Only smokers whose age is above the median age of this sample
-filter(blomkvist, --- == ---, 
+filter(blomkvist, --- == ---,
                   --- > ---(---, na.rm = TRUE))
 
-# Assign the result to a new data variable called "blomkvist_filtered".
+# Assign the result to a new data variable called `blomkvist_filtered`.
 # Conditions are: rts are smaller than 500, or larger 1250, age is younger than 40,
 # and only smokers and non-smokers (not former smokers)
 --- <- filter(---, ---)
@@ -54,6 +57,6 @@ filter(blomkvist, --- == ---,
 # Inspect new data variable using glimpse
 glimpse(---)
 
-# How do you know your filter code was successful 
+# How do you know your filter code was successful
 # (other than confidence in your code)?
 

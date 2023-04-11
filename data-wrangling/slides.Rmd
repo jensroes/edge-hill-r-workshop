@@ -127,7 +127,7 @@ knitr::include_graphics("../gfx/tidy_1.png")
 ```
 
 - Placing variables in columns takes advantage of R's vectorised nature (faster processing, more compact code).
-- Consistent data structure allows easier learning of related tools because they have similar underpinning principles (except similar input structures).
+- Consistent data structure allows easier learning of related tools because they have similar underpinning principles.
 
 
 ## `tidyverse`: verbs
@@ -143,7 +143,7 @@ knitr::include_graphics("../gfx/tidy_1.png")
 
 
 
-## tbls (tibble) {.smaller}
+## tbls (tibbles) {.smaller}
 
 <div style="float: left; width: 50%;">
 
@@ -1240,6 +1240,22 @@ pivot_wider(bk_long,
 Continue with exercise 6
 
 
+# Congratulations!
+
+## Congratulations!
+
+... you have worked through a large range of data visualisation and wrangling tools that will give you more flexibility to get the most out of your data.\
+
+- Use the slides to remind yourself how things work, repeat exercises, look at my advanced materials.
+- Keep using `tidyverse` and don't fall back into old habits (e.g. spreadsheets).
+- Explore new functions for data processing and visualisation.
+- [*R for Data Science*](https://r4ds.had.co.nz/) by @wickham2016r
+- [*Doing Data Science in R: An Introduction for Social Scientists*](https://www.mjandrews.org/book/ddsr/) by @andrews2021doing
+- Consider using R-Markdown; e.g. [some work in progress by myself](https://rpubs.com/jensroes/1000459)
+
+
+
+
 # Advanced data wrangling (homework)
 
 
@@ -1805,5 +1821,4 @@ mutate(blomkvist_rt, age_cat = case_when(age > 70 ~ "high",
 
 Open exercise 9 script.
 
-
-
+## References

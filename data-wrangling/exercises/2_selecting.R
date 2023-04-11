@@ -25,9 +25,17 @@ select(blomkvist, -contains("hand_"))
 # Use where() to remove all variables that are of the type character (is.character).
 select(blomkvist, where(---))
 
+# After you selected your desired variables you can create a new data frame object
+# using the assignment operator <-.
+# Select id, age, sex
+blomkvist_new <- select(blomkvist, ---, ---, ---)
+
+# and confirm that the new object `blomkvist_new` only contains id, age, sex
+glimpse(---)
+
 # Tasks:
 # Without spelling out every variable, ...
-# select the following variables: id, medicine, pal_work, pal_leisure
+# select the following variables: id, medicine, rt_hand_nd, rt_foot_nd
 select(blomkvist, ---)
 
 # select the first 4 variables
@@ -39,16 +47,16 @@ select(---)
 # remove all foot rt data
 select(---)
 
-# Assign the tibble with id and all rt_ variables to a new variable.
+# Use can rename variables while selecting them like so:
+# select(data, new_name = old_name, var2, var3)
+# Use select to keep `id` and all `rt_` variables and rename `id` to `ppt`.
+select(---)
+
+# Assign the data frame with `id` and all `rt_` variables to a new data frame `blomkvist_new`
 --- <- select(---)
 
 # Check out new data variable using glimpse
 glimpse(---)
-
-# Use can rename variables while selecting them like so:
-# select(data, new_name = old_name, var2, var3)
-# Use select to keep id and all rt_ variables and rename id to ppt.
-select(---)
 
 # You can save your new data in csv format using:
 write_csv(---, "data/name_of_target_file.csv")
