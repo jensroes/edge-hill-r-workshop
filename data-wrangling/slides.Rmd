@@ -1250,7 +1250,7 @@ Continue with exercise 6
 - Keep using `tidyverse` and don't fall back into old habits (e.g. spreadsheets).
 - Explore new functions for data processing and visualisation.
 - [*R for Data Science*](https://r4ds.had.co.nz/) by @wickham2016r
-- [*Doing Data Science in R: An Introduction for Social Scientists*](https://www.mjandrews.org/book/ddsr/) by @andrews2021doing
+- [*Doing Data Science in R*, chapter 3](https://www.mjandrews.org/book/ddsr/) by @andrews2021doing
 - Consider using R-Markdown; e.g. [some work in progress by myself](https://rpubs.com/jensroes/1000459)
 
 
@@ -1822,3 +1822,10 @@ mutate(blomkvist_rt, age_cat = case_when(age > 70 ~ "high",
 Open exercise 9 script.
 
 ## References
+
+<style>
+slides > slide { overflow: scroll; }
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>

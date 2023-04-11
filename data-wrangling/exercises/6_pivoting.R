@@ -63,11 +63,12 @@ blomkvist_summary <- summarise(blomkvist_grouped,
 # Ungroup data
 blomkvist_summary <- ungroup(blomkvist_summary)
 
-# Look at the data
+# Look at the data and make sure you understand variable names and what they show.
 blomkvist_summary
 
 # Pivot is better than older reshaping functions because it can handle more than
-# one variable at once like so:
-pivot_wider(---, # needs to be the summary data set
-            names_from = ---, # use dominant
-            values_from = c(rt_mean, rt_sd))
+# one variable at once using the c() function.
+# Complete the following code
+pivot_wider(---, # needs to be the summary data set `blomkvist_summary`
+            names_from = ---, # use the variable for dominant
+            values_from = c(rt_mean, rt_sd)) # pivot two variables at the same time

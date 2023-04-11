@@ -283,7 +283,7 @@ library(tidyverse)</pre></div>
 
 <ul>
 <li>Placing variables in columns takes advantage of R’s vectorised nature (faster processing, more compact code).</li>
-<li>Consistent data structure allows easier learning of related tools because they have similar underpinning principles (except similar input structures).</li>
+<li>Consistent data structure allows easier learning of related tools because they have similar underpinning principles.</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><code>tidyverse</code>: verbs</h2></hgroup><article  id="tidyverse-verbs">
@@ -295,7 +295,7 @@ library(tidyverse)</pre></div>
 <li><p>There are more but these are the most important ones.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>tbls (tibble)</h2></hgroup><article  id="tbls-tibble" class="smaller">
+</article></slide><slide class=""><hgroup><h2>tbls (tibbles)</h2></hgroup><article  class="smaller" id="tbls-tibbles">
 
 <div style="float: left; width: 50%;">
 <ul>
@@ -1269,7 +1269,7 @@ y &lt;- c(100, 1150, 200, 43, NA, 15)</pre>
 
 <p>Continue with exercise 4</p>
 
-</article></slide><slide class=""><hgroup><h2>Grouping data with <code>group_by()</code></h2></hgroup><article  id="grouping-data-with-group_by" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Grouping data with <code>group_by()</code></h2></hgroup><article  class="smaller" id="grouping-data-with-group_by">
 
 <p>Perform an action (function) for each level the grouping variable individually.</p>
 
@@ -1653,6 +1653,21 @@ bk_long</pre>
 
 <p>Continue with exercise 6</p>
 
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Congratulations!</h2></hgroup><article  id="congratulations">
+
+</article></slide><slide class=""><hgroup><h2>Congratulations!</h2></hgroup><article  id="congratulations-1">
+
+<p>… you have worked through a large range of data visualisation and wrangling tools that will give you more flexibility to get the most out of your data.<br/></p>
+
+<ul>
+<li>Use the slides to remind yourself how things work, repeat exercises, look at my advanced materials.</li>
+<li>Keep using <code>tidyverse</code> and don’t fall back into old habits (e.g. spreadsheets).</li>
+<li>Explore new functions for data processing and visualisation.</li>
+<li><a href='https://r4ds.had.co.nz/' title=''><em>R for Data Science</em></a> by <span class="cite">Wickham and Grolemund (2016)</span></li>
+<li><a href='https://www.mjandrews.org/book/ddsr/' title=''><em>Doing Data Science in R</em>, chapter 3</a> by <span class="cite">Andrews (2021)</span></li>
+<li>Consider using R-Markdown; e.g. <a href='https://rpubs.com/jensroes/1000459' title=''>some work in progress by myself</a></li>
+</ul>
+
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Advanced data wrangling (homework)</h2></hgroup><article  id="advanced-data-wrangling-homework">
 
 </article></slide><slide class=""><hgroup><h2>The pipe: <code>%&gt;%</code></h2></hgroup><article  id="the-pipe">
@@ -1797,7 +1812,7 @@ bind_cols(bk_id_age, bk_med_smoke)</pre>
 <pre class = 'prettyprint lang-r'>bk_former_smokers &lt;- filter(blomkvist, smoker == &quot;former&quot;)
 bk_smokers &lt;- filter(blomkvist, smoker == &quot;yes&quot;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Combine data: <code>bind_rows()</code></h2></hgroup><article  id="combine-data-bind_rows-1" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Combine data: <code>bind_rows()</code></h2></hgroup><article  class="smaller" id="combine-data-bind_rows-1">
 
 <pre class = 'prettyprint lang-r'># Stacking two data sets
 bk_smoking &lt;- bind_rows(bk_former_smokers, bk_smokers)</pre>
@@ -1950,7 +1965,7 @@ bk_joined</pre>
 
 <p>Continue with exercise 8</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  id="mutate-data-with-across" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-across">
 
 <div style="float: left; width: 40%;">
 <p>Create a new column.</p>
@@ -1984,7 +1999,7 @@ bk_joined</pre>
 
 <p>First argument of <code>across</code> will be used as first argument of function (<code>log</code>) which is supplied as second argument to <code>across</code>.</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  id="mutate-data-with-across-1" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-across-1">
 
 <pre class = 'prettyprint lang-r'># Instead of
 mutate(blomkvist, rt_hand_d = log(rt_hand_d), 
@@ -2003,7 +2018,7 @@ mutate(blomkvist, across(c(rt_hand_d, rt_hand_nd), log))</pre>
 5     5 male      73 a lot    former      6.41       6.48      923        805 
 # … with 259 more rows</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  id="mutate-data-with-across-2" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-across-2">
 
 <pre class = 'prettyprint lang-r'>mutate(blomkvist, across(where(is.numeric), log))</pre>
 
@@ -2019,7 +2034,7 @@ mutate(blomkvist, across(c(rt_hand_d, rt_hand_nd), log))</pre>
 
 <pre class = 'prettyprint lang-r'># Not ideal here: see `id` column</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  id="mutate-data-with-across-3" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-across-3">
 
 <pre class = 'prettyprint lang-r'>mutate(blomkvist, across(starts_with(&quot;rt_&quot;), log))</pre>
 
@@ -2035,7 +2050,7 @@ $ rt_hand_nd &lt;dbl&gt; 6.7, 6.2, 6.5, 6.5, 6.5, 6.2, 6.3, 6.3, 6.8, 6.3, 6.2, 
 $ rt_foot_d  &lt;dbl&gt; 6.9, 6.6, 6.8, 6.8, 6.8, 6.5, 6.7, 6.6, 6.6, 6.4, 6.5, 6.7,…
 $ rt_foot_nd &lt;dbl&gt; 6.9, 6.5, 6.7, 7.2, 6.7, 6.4, 6.6, 6.7, 6.7, 6.7, 6.6, 6.8,…</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  id="mutate-data-with-across-4" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-across-4">
 
 <pre class = 'prettyprint lang-r'>mutate(blomkvist, across(starts_with(&quot;rt_&quot;), log, .names = &quot;log_{.col}&quot;))</pre>
 
@@ -2055,7 +2070,7 @@ $ log_rt_hand_nd &lt;dbl&gt; 6.7, 6.2, 6.5, 6.5, 6.5, 6.2, 6.3, 6.3, 6.8, 6.3, 6
 $ log_rt_foot_d  &lt;dbl&gt; 6.9, 6.6, 6.8, 6.8, 6.8, 6.5, 6.7, 6.6, 6.6, 6.4, 6.5, …
 $ log_rt_foot_nd &lt;dbl&gt; 6.9, 6.5, 6.7, 7.2, 6.7, 6.4, 6.6, 6.7, 6.7, 6.7, 6.6, …</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  id="mutate-data-with-across-5" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-across-5">
 
 <pre class = 'prettyprint lang-r'>mutate(blomkvist, across(starts_with(&quot;rt_&quot;), list(lg = log, sqr = ~.^2), .names = &quot;{.fn}_{.col}&quot;))</pre>
 
@@ -2214,7 +2229,7 @@ $ sqr_rt_foot_nd &lt;dbl&gt; 926727, 479325, 617796, 1886960, 648025, 359600, 56
 # … with abbreviated variable names ¹​rt_hand_nd_mean, ²​rt_hand_nd_sd,
 #   ³​rt_foot_d_mean, ⁴​rt_foot_d_sd, ⁵​rt_foot_nd_mean, ⁶​rt_foot_nd_sd</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  id="mutate-data-with-c_across" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-c_across">
 
 <p>Apply a function across different columns.</p>
 
@@ -2233,7 +2248,7 @@ mutate(blomkvist, sum_rt = rt_hand_d + rt_hand_nd + rt_foot_d + rt_foot_nd)</pre
 5     5 male      73      607.       652       923        805   2987.
 # … with 259 more rows</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  id="mutate-data-with-c_across-1" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-c_across-1">
 
 <pre class = 'prettyprint lang-r'># Long way
 mutate(blomkvist, sum_rt = rt_hand_d + rt_hand_nd + rt_foot_d + rt_foot_nd)</pre>
@@ -2248,7 +2263,7 @@ mutate(blomkvist, sum_rt = rt_hand_d + rt_hand_nd + rt_foot_d + rt_foot_nd)</pre
 5     5 male      73      607.       652       923        805   2987.
 # … with 259 more rows</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  id="mutate-data-with-c_across-2" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-c_across-2">
 
 <pre class = 'prettyprint lang-r'># Using sum function doesn&#39;t give the desired result
 mutate(blomkvist, sum_rt = sum(c(rt_hand_d, rt_hand_nd, rt_foot_d, rt_foot_nd), na.rm = TRUE))</pre>
@@ -2263,7 +2278,7 @@ mutate(blomkvist, sum_rt = sum(c(rt_hand_d, rt_hand_nd, rt_foot_d, rt_foot_nd), 
 5     5 male      73      607.       652       923        805  789356.
 # … with 259 more rows</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  id="mutate-data-with-c_across-3" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-c_across-3">
 
 <pre class = 'prettyprint lang-r'># Long way
 mutate(blomkvist, sum_rt = rt_hand_d + rt_hand_nd + rt_foot_d + rt_foot_nd)</pre>
@@ -2283,7 +2298,7 @@ mutate(blomkvist_rowwise, sum_rt = sum(c_across(c(rt_hand_d, rt_hand_nd, rt_foot
 5     5 male      73      607.       652       923        805   2987.
 # … with 259 more rows</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  id="mutate-data-with-c_across-4" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-c_across-4">
 
 <pre class = 'prettyprint lang-r'># Long way
 mutate(blomkvist, sum_rt = rt_hand_d + rt_hand_nd + rt_foot_d + rt_foot_nd)</pre>
@@ -2303,7 +2318,7 @@ mutate(blomkvist_rowwise, sum_rt = sum(c_across(starts_with(&quot;rt_&quot;))))<
 5     5 male      73      607.       652       923        805   2987.
 # … with 259 more rows</pre>
 
-</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  id="mutate-data-with-c_across-5" class="smaller">
+</article></slide><slide class=""><hgroup><h2>Mutate data with <code>c_across()</code></h2></hgroup><article  class="smaller" id="mutate-data-with-c_across-5">
 
 <pre class = 'prettyprint lang-r'># Without rowwise grouping returns the overall sum:
 mutate(blomkvist, sum_rt = sum(c_across(starts_with(&quot;rt_&quot;))))</pre>
@@ -2341,7 +2356,24 @@ mutate(blomkvist, sum_rt = sum(c_across(starts_with(&quot;rt_&quot;))))</pre>
 
 </article></slide><slide class=""><hgroup><h2>Using <code>across()</code> to mutate and summarise variables</h2></hgroup><article  id="using-across-to-mutate-and-summarise-variables">
 
-<p>Open exercise 9 script.</p></article></slide>
+<p>Open exercise 9 script.</p>
+
+</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  id="references">
+
+<style>
+slides > slide { overflow: scroll; }
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
+
+<div class="references csl-bib-body hanging-indent" id="refs">
+<div class="csl-entry" id="ref-andrews2021doing">
+<p>Andrews, Mark. 2021. <em><span class="nocase">
+Doing data science in R: An Introduction for Social Scientists</span></em>. London, UK: SAGE Publications Ltd.</p></div>
+
+<div class="csl-entry" id="ref-wickham2016r">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. O’Reilly Media, Inc.</p></div></div></article></slide>
 
 
   <slide class="backdrop"></slide>
