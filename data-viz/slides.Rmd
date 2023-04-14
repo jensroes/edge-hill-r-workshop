@@ -1899,7 +1899,7 @@ Continue with **exercises/5b_bringing_everything_together.R**
 ## Useful resources
 
 - [*R for Data Science*, chapter 3](https://r4ds.had.co.nz/data-visualisation.html) by @wickham2016r
-- [*Doing Data Science in R: An Introduction for Social Scientists*, chapter 4](https://www.mjandrews.org/book/ddsr/) by @andrews2021doing
+- [*Doing Data Science in R*, chapter 4](https://www.mjandrews.org/book/ddsr/) by @andrews2021doing
 - choosing the right visualisation: [data-to-viz.com](https://www.data-to-viz.com/)
 - Rick Scavetta's course: [datacamp.com](https://learn.datacamp.com/skill-tracks/data-visualization-with-r)
 - `ggplot2` [CheatSheet](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)

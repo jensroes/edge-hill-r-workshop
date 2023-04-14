@@ -4,7 +4,8 @@ library(tidyverse)
 # Import data as tibble
 blomkvist <- read_csv("data/blomkvist.csv")
 
-# Select id, smoker, age, medicine and rt of dominant hand renamed as rt
+# Select id, smoker, age, medicine dosage (`meds_cat`),
+# and rt of dominant hand renamed as rt
 blomkvist <- select(blomkvist, ---)
 
 # Remove rts larger than 1.5 secs and missing rts (NAs)
