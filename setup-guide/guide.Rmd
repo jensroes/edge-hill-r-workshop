@@ -2,7 +2,18 @@
 title: "Setting up RStudio"
 author: "Andrew Mackenzie, Jens Roeser"
 date: "Compiled `r format(Sys.Date(), '%b %d %Y')`"
-output: html_document
+#output: html_document
+output: 
+  rmdformats::downcute:
+    keep_md: true
+    self_contained: true
+    thumbnails: false # for images
+    lightbox: true
+    gallery: false
+    highlight: tango
+    use_bookdown: true # for cross references
+
+
 ---
 
 ```{r setup, include=FALSE}
